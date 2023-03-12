@@ -13,7 +13,9 @@ interface State {
 
 function App() {
   // Get counter from counterReducer
-  const counter = useSelector<State, number>((state) => state.myCounter.counter)
+  const counter = useSelector<State, number>(
+    ({ myCounter }) => myCounter.counter
+  )
 
   // Use for all the dispatch actions
   const dispatch = useDispatch()
