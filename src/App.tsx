@@ -1,11 +1,22 @@
-import { useState } from 'react'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
+import { useSelector, useDispatch } from 'react-redux'
+
 import reactLogo from './assets/react.svg'
 import './App.css'
 
+interface State {
+  myCounter: {
+    counter: number
+  }
+}
+
 function App() {
-  const [count, setCount] = useState(0)
+  // Get counter from counterReducer
+  const counter = useSelector<State, number>((state) => state.myCounter.counter)
+
+  // Use for all the dispatch actions
+  const dispatch = useDispatch()
 
   return (
     <div className="App">
@@ -19,8 +30,11 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button type="button" onClick={() => setCount((prev) => prev + 1)}>
-          count is {count}
+        <button
+          type="button"
+          onClick={() => dispatch({ type: 'INCREMENT_COUNT' })}
+        >
+          count is {counter}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
