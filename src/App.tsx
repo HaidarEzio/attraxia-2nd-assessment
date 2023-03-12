@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Stack from '@mui/material/Stack'
+import Button from '@mui/material/Button'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
@@ -27,6 +29,11 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Stack spacing={2} direction="row">
+        <Button variant="text">Text</Button>
+        <Button variant="contained">Contained</Button>
+        <Button variant="outlined">Outlined</Button>
+      </Stack>
     </div>
   )
 }
