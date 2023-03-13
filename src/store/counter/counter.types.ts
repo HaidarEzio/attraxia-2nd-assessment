@@ -1,6 +1,6 @@
 export type ReducerAction = {
   type: string
-  payload: any
+  payload: number
 }
 
 export type CounterReducerState = {
