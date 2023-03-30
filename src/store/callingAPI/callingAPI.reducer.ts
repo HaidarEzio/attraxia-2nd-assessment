@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/default-param-last */
-// import { CounterReducerState, ReducerAction } from './counter.types'
 
 export interface APIReducerState {
   id: number
